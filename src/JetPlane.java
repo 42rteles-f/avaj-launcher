@@ -1,6 +1,8 @@
 class JetPlane extends Aircraft {
-	JetPlane(String model, int maxSpeed, int range, int price) {
-		super(model, maxSpeed, range, price);
+	JetPlane(long p_id, String p_name, Coordinates p_coordinates) {
+		super(p_id, p_name, p_coordinates);
 	}
+
+	public void updateConditions() {}
 
 }

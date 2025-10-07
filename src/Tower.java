@@ -1,18 +1,19 @@
+import java.util.ArrayList;
+import java.util.List;
+
 class Tower {
-	private int height;
-	private String material;
 	private List<Flyable> observers = new ArrayList<>();
 
-	public Tower(int height, String material) {
-		this.height = height;
-		this.material = material;
+	public void register(Flyable p_flyable) {
+		if (!this.observers.contains(p_flyable))
+			this.observers.add(p_flyable);
 	}
 
-	public int getHeight() {
-		return height;
+	public void unregister(Flyable p_flyable) {
+		this.observers.remove(p_flyable);
 	}
 
-	public String getMaterial() {
-		return material;
+	protected void conditionsChanged() {
+		this.observers.forEach(ob -> ob.updateConditions());
 	}
 }
