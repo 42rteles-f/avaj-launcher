@@ -1,6 +1,8 @@
 class Helicopter extends Aircraft {
-	Helicopter(String model, int maxSpeed, int range, int price) {
-		super(model, maxSpeed, range, price);
+	Helicopter(long p_id, String p_name, Coordinates p_coordinates) {
+		super(p_id, p_name, p_coordinates);
 	}
+
+	public void updateConditions() {}
 
 }

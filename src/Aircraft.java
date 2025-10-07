@@ -1,34 +1,17 @@
-class Aircraft {
-	private String model;
-	private int maxSpeed;
-	private int range;
-	private int price;
+class Aircraft extends Flyable {
+	protected long id;
+	protected String name;
+	protected Coordinates coordinates;
 
-	public Aircraft(String model, int maxSpeed, int range, int price) {
-		this.model = model;
-		this.maxSpeed = maxSpeed;
-		this.range = range;
-		this.price = price;
-	}
-
-	public String getModel() {
-		return model;
-	}
-
-	public int getMaxSpeed() {
-		return maxSpeed;
-	}
-
-	public int getRange() {
-		return range;
-	}
-
-	public int getPrice() {
-		return price;
+	protected Aircraft(long p_id, String p_name, Coordinates p_coordinates) {
+		this.id = p_id;
+		this.name = p_name;
+		this.coordinates = p_coordinates;
 	}
 
 	@Override
-	public String toString() {
-		return "Model: " + model + ", Max Speed: " + maxSpeed + " km/h, Range: " + range + " km, Price: $" + price;
+	public void updateConditions() {
+		// TODO Auto-generated method stub
 	}
+
 }
