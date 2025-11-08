@@ -1,7 +1,11 @@
+package tower;
+
 import java.util.ArrayList;
 import java.util.List;
 
-class Tower {
+import aircraft.Flyable;
+
+public class Tower {
 	private List<Flyable> observers = new ArrayList<>();
 
 	public void register(Flyable p_flyable) {

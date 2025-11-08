@@ -1,4 +1,8 @@
-class Aircraft extends Flyable {
+package aircraft;
+
+import weather.Coordinates;
+
+public class Aircraft extends Flyable {
 	protected long id;
 	protected String name;
 	protected Coordinates coordinates;

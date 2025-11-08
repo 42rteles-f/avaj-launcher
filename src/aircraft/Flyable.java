@@ -1,4 +1,8 @@
-abstract class Flyable {
+package aircraft;
+
+import tower.WeatherTower;
+
+public abstract class Flyable {
 	protected WeatherTower weatherTower;
 
 	public abstract void updateConditions();

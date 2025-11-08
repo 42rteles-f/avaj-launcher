@@ -1,4 +1,8 @@
-class AircraftFactory {
+package aircraft;
+
+import weather.Coordinates;
+
+public class AircraftFactory {
 	private static final AircraftFactory INSTANCE = new AircraftFactory();
 	private static long idCounter = 0;
 
