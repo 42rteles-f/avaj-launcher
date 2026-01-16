@@ -9,6 +9,10 @@ public class Tower {
 	private List<Flyable> observers = new ArrayList<>();
 
 	public void register(Flyable p_flyable) {
+		if (p_flyable == null) {
+			System.out.println("Invalid Flyable object.");
+			return;
+		}
 		if (!this.observers.contains(p_flyable))
 			this.observers.add(p_flyable);
 	}

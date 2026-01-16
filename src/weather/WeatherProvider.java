@@ -1,8 +1,10 @@
 package weather;
 
 public class WeatherProvider {
-	private String[] weather = { "RAIN", "FOG", "SUN", "SNOW" };
 	private static final WeatherProvider INSTANCE = new WeatherProvider();
+
+	private String[]		weather = { "SUN", "RAIN", "FOG", "SNOW" };
+	private static String	currentWeather;
 
 	private WeatherProvider() {}
 
