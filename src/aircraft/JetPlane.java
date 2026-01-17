@@ -13,17 +13,21 @@ public class JetPlane extends Aircraft {
 		String weather = this.weatherTower.getWeather(this.coordinates);
 		switch (weather) {
 			case "SUN" -> {
-				this.coordinates.incrementLatitude(10);
-				this.coordinates.incrementHeight(2);
+				this.coordinates.adjustLatitude(10);
+				this.coordinates.adjustHeight(2);
+				System.out.println(this.toString() + ": It's sunny. Perfect weather for a Jet away.");
 			}
 			case "RAIN" -> {
-				this.coordinates.incrementLatitude(5);
+				this.coordinates.adjustLatitude(5);
+				System.out.println(this.toString() + ": Cutting rain like a knife in the sky.");
 			}
 			case "FOG" -> {
-				this.coordinates.incrementLatitude(1);
+				this.coordinates.adjustLatitude(1);
+				System.out.println(this.toString() + ": Fog confirmed, approaching unsuspecting enemy.");
 			}
 			case "SNOW" -> {
-				this.coordinates.incrementHeight(-7);
+				this.coordinates.adjustHeight(-7);
+				System.out.println(this.toString() + ": Snow confirmed, entering Russian airspace.");
 			}
 		};
 

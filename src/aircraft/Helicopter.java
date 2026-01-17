@@ -13,17 +13,21 @@ public class Helicopter extends Aircraft {
 		String weather = this.weatherTower.getWeather(this.coordinates);
 		switch (weather) {
 			case "SUN" -> {
-				this.coordinates.incrementLongitude(10);
-				this.coordinates.incrementHeight(2);
+				this.coordinates.adjustLongitude(10);
+				this.coordinates.adjustHeight(2);
+				System.out.println(this.toString() + ": Love the wind on Sunny days!");
 			}
 			case "RAIN" -> {
-				this.coordinates.incrementLongitude(5);
+				this.coordinates.adjustLongitude(5);
+				System.out.println(this.toString() + ": This rain is jeopardazing the rescue mission!");
 			}
 			case "FOG" -> {
-				this.coordinates.incrementLongitude(1);
+				this.coordinates.adjustLongitude(1);
+				System.out.println(this.toString() + ": We cant follow Rambo in the Fog!");
 			}
 			case "SNOW" -> {
-				this.coordinates.incrementHeight(-12);
+				this.coordinates.adjustHeight(-12);
+				System.out.println(this.toString() + ": Freeze failure! Abort!");
 			}
 		};
 

@@ -17,14 +17,18 @@ public class Aircraft extends Flyable {
 	public void updateConditions() {}
 
 	public void land() {
+		if (this.weatherTower == null) {
+			System.out.println("Error: weatherTower is null in land()");
+			return ;
+		}
+
+		System.out.println(this.toString() + " landing.");
 		this.weatherTower.unregister(this);
-		System.out.printf("%s#%s(%d) landing at coordinates [%d, %d, %d]%n",
-			this.getClass().getSimpleName(),
-			this.name,
-			this.id,
-			this.coordinates.longitude(),
-			this.coordinates.latitude(),
-			this.coordinates.height());
+	}
+
+	@Override
+	public String toString() {
+		return String.format("%s#%s(%d)", this.getClass().getSimpleName(), this.name, this.id);
 	}
 }
 

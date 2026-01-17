@@ -13,17 +13,21 @@ public class Baloon extends Aircraft {
 		String weather = this.weatherTower.getWeather(this.coordinates);
 		switch (weather) {
 			case "SUN" -> {
-				this.coordinates.incrementLongitude(2);
-				this.coordinates.incrementHeight(4);
+				this.coordinates.adjustLongitude(2);
+				this.coordinates.adjustHeight(4);
+				System.out.println(this.toString() + ": Sun's out, get the champagne!");
 			}
 			case "RAIN" -> {
-				this.coordinates.incrementHeight(-5);
+				this.coordinates.adjustHeight(-5);
+				System.out.println(this.toString() + ": Raining! Should have checked the weather!");
 			}
 			case "FOG" -> {
-				this.coordinates.incrementHeight(-3);
+				this.coordinates.adjustHeight(-3);
+				System.out.println(this.toString() + ": I actually enjoy the view with a little Fog.");
 			}
 			case "SNOW" -> {
-				this.coordinates.incrementHeight(-15);
+				this.coordinates.adjustHeight(-15);
+				System.out.println(this.toString() + ": Is it dangerous to baloon on Snow days? 🥶");
 			}
 		};
 

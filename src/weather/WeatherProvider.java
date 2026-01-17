@@ -4,7 +4,6 @@ public class WeatherProvider {
 	private static final WeatherProvider INSTANCE = new WeatherProvider();
 
 	private String[]		weather = { "SUN", "RAIN", "FOG", "SNOW" };
-	private static String	currentWeather;
 
 	private WeatherProvider() {}
 
@@ -13,6 +12,6 @@ public class WeatherProvider {
 	}
 
 	public String getCurrentWeather(Coordinates p_Coordinates) {
-		return (this.weather[(p_Coordinates.getLongitude() + p_Coordinates.getLatitude() + p_Coordinates.getHeight()) % 4]);
+		return (this.weather[(p_Coordinates.longitude() + p_Coordinates.latitude() + p_Coordinates.height()) % 4]);
 	}
 }

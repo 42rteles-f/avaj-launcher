@@ -10,10 +10,10 @@ public class Coordinates {
 	private byte _height;
 
 	public Coordinates(byte p_longitude, byte p_latitude, byte p_height) {
-		this.reset(p_longitude, p_latitude, p_height);
+		this.setAll(p_longitude, p_latitude, p_height);
 	}
-	
-	public void reset(byte p_longitude, byte p_latitude, byte p_height) {
+
+	public void setAll(byte p_longitude, byte p_latitude, byte p_height) {
 		this._longitude = this.validateValue(p_longitude);
 		this._latitude = this.validateValue(p_latitude);
 		this._height = this.validateValue(p_height);
@@ -39,15 +39,15 @@ public class Coordinates {
 		return (this._height);
 	}
 
-	public void incrementLongitude(int delta) {
+	public void adjustLongitude(int delta) {
 		this._longitude = this.validateValue(this._longitude + delta);
 	}
 
-	public void incrementLatitude(int delta) {
+	public void adjustLatitude(int delta) {
 		this._latitude = this.validateValue(this._latitude + delta);
 	}
 
-	public void incrementHeight(int delta) {
+	public void adjustHeight(int delta) {
 		this._height = this.validateValue(this._height + delta);
 	}
 }
