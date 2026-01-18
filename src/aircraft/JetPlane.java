@@ -15,7 +15,7 @@ public class JetPlane extends Aircraft {
 			case "SUN" -> {
 				this.coordinates.adjustLatitude(10);
 				this.coordinates.adjustHeight(2);
-				System.out.println(this.toString() + ": It's sunny. Perfect weather for a Jet away.");
+				System.out.println(this.toString() + ": It's sunny. Perfect day for a Jet away.");
 			}
 			case "RAIN" -> {
 				this.coordinates.adjustLatitude(5);

@@ -12,6 +12,9 @@ public class AirportSimulator {
 
     public AirportSimulator(Scenario scenario) {
 		this.setScenario(scenario);
+		this.weatherTower = new WeatherTower();
+		this.createAircrafts();
+		this.run();
     }
 
 	public void setScenario(Scenario scenario) {
@@ -21,9 +24,6 @@ public class AirportSimulator {
 			return;
 		}
 		this.scenario = scenario;
-		this.weatherTower = new WeatherTower();
-		this.createAircrafts();
-		this.run();
 	}
 
 	public void run() {
@@ -36,8 +36,6 @@ public class AirportSimulator {
 			return;
 		}
 
-		System.out.println("Starting simulation with the following parameters:");
-		System.out.println("Number of Weather Changes: " + this.scenario.numberOfSimulations());
 		for (int i = 0; i < this.scenario.numberOfSimulations(); i++) {
 			this.weatherTower.changeWeather();
 		}
