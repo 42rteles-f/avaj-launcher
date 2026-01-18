@@ -1,6 +1,5 @@
 package weather;
 
-
 public class Coordinates {
 	static final byte MIN_COORDINATE_VALUE = 0;
 	static final byte MAX_COORDINATE_VALUE = 100;
@@ -9,11 +8,11 @@ public class Coordinates {
 	private byte _latitude;
 	private byte _height;
 
-	public Coordinates(byte p_longitude, byte p_latitude, byte p_height) {
-		this.setAll(p_longitude, p_latitude, p_height);
+	public Coordinates(int longitude, int latitude, int height) {
+		this.setAll(longitude, latitude, height);
 	}
 
-	public void setAll(byte p_longitude, byte p_latitude, byte p_height) {
+	public void setAll(int p_longitude, int p_latitude, int p_height) {
 		this._longitude = this.validateValue(p_longitude);
 		this._latitude = this.validateValue(p_latitude);
 		this._height = this.validateValue(p_height);

@@ -2,9 +2,9 @@ package aircraft;
 
 import weather.Coordinates;
 
-public class Baloon extends Aircraft {
+public class Balloon extends Aircraft {
 
-	Baloon(long p_id, String p_name, Coordinates p_coordinates) {
+	Balloon(long p_id, String p_name, Coordinates p_coordinates) {
 		super(p_id, p_name, p_coordinates);
 	}
 
@@ -27,7 +27,7 @@ public class Baloon extends Aircraft {
 			}
 			case "SNOW" -> {
 				this.coordinates.adjustHeight(-15);
-				System.out.println(this.toString() + ": Is it dangerous to baloon on Snow days? 🥶");
+				System.out.println(this.toString() + ": Is it dangerous to balloon on Snow days? 🥶");
 			}
 		};
 
