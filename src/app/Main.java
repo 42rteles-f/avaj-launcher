@@ -6,6 +6,8 @@ import simulator.*;
 
 public class Main {
 
+	final static String SIMULATION_OUTPUT = "simulation.txt";
+
     public static void main(String[] args) {
 		PrintStream originalOut = System.out;
         PrintStream fileOut = null;
@@ -14,22 +16,23 @@ public class Main {
             System.out.println("Invalid Argument.\nProgram Usage: ./avaj-launcher <file path>");
             return ;
         }
+
         try {
-            fileOut = new PrintStream(new FileOutputStream("simulation.txt"));
+			Scenario scenario = new Scenario(args[0]);
+
+			fileOut = new PrintStream(new FileOutputStream(SIMULATION_OUTPUT));
             System.setOut(fileOut);
-        } catch (Exception e) {
+
+			new AirportSimulator(scenario);
+
+			System.setOut(originalOut);
+			if (fileOut != null) fileOut.close();
+        }
+		catch (Exception e) {
             System.out.println("Error redirecting output.");
             return;
         }
 
-		new AirportSimulator(new Scenario(args[0]));
-
-		System.setOut(originalOut);
-		if (fileOut != null) {
-			fileOut.flush();
-			fileOut.close();
-		}
-		
 		return ;
     }
 }

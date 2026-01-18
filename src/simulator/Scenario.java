@@ -15,8 +15,10 @@ public class Scenario {
 
 	public Scenario(String filePath) {
 		if ( filePath == null || filePath.isEmpty() ) {
-			this._isValid = false;
-			return ;
+			throw new IllegalArgumentException("Error: File path is null or empty.");
+		}
+		if (Files.notExists(Path.of(filePath))) {
+			throw new IllegalArgumentException("Error: File does not exist at the specified path.");
 		}
 		this.validateScenario(filePath);
 	}
