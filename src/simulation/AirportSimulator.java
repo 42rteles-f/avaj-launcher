@@ -19,6 +19,10 @@ public class AirportSimulator {
         try (BufferedReader reader = Files.newBufferedReader(path)) {
             
         }
+		catch (IOException e) {
+			e.printStackTrace();
+		}
+
 
 
     }
