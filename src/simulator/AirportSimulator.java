@@ -1,10 +1,10 @@
 package simulator;
 
+import aircraft.AircraftFactory;
 import aircraft.AircraftSpec;
 import aircraft.Flyable;
 import tower.WeatherTower;
 import weather.Coordinates;
-import aircraft.AircraftFactory;
 
 public class AirportSimulator {
 	private Scenario		scenario;
