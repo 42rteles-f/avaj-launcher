@@ -1,6 +1,6 @@
 package aircraft;
 
-import weather.Coordinates;
+import simulator.Coordinates;
 
 public class AircraftFactory {
 	private static final AircraftFactory INSTANCE = new AircraftFactory();

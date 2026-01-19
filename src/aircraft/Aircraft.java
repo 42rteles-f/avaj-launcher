@@ -1,6 +1,6 @@
 package aircraft;
 
-import weather.Coordinates;
+import simulator.Coordinates;
 
 public class Aircraft extends Flyable {
 	protected long			id;

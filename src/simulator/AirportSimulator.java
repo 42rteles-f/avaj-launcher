@@ -4,7 +4,6 @@ import aircraft.AircraftFactory;
 import aircraft.AircraftSpec;
 import aircraft.Flyable;
 import tower.WeatherTower;
-import weather.Coordinates;
 
 public class AirportSimulator {
 	private Scenario		scenario;

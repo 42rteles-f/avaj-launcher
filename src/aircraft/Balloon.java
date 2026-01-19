@@ -1,6 +1,6 @@
 package aircraft;
 
-import weather.Coordinates;
+import simulator.Coordinates;
 
 public class Balloon extends Aircraft {
 
@@ -31,7 +31,7 @@ public class Balloon extends Aircraft {
 			}
 		};
 
-		if (this.coordinates.height() < 1)
+		if (this.coordinates.getHeight() < 1)
 			this.land();
 	}
 

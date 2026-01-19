@@ -1,5 +1,7 @@
 package weather;
 
+import simulator.Coordinates;
+
 public class WeatherProvider {
 	private static final WeatherProvider INSTANCE = new WeatherProvider();
 
@@ -12,6 +14,8 @@ public class WeatherProvider {
 	}
 
 	public String getCurrentWeather(Coordinates p_Coordinates) {
-		return (this.weather[(p_Coordinates.longitude() + p_Coordinates.latitude() + p_Coordinates.height()) % 4]);
+		return (this.weather[
+			(p_Coordinates.getLongitude() + p_Coordinates.getLatitude() + p_Coordinates.getHeight()) % 4
+		]);
 	}
 }
