@@ -23,15 +23,15 @@ public class Tower {
 
 	public void unregister(Flyable p_flyable) {
 		if (p_flyable != null) this.toRemove.add(p_flyable);
+		System.out.println(
+			"Tower says: " + p_flyable.toString() + " unregistered from weather tower."
+		);
 	}
 
 	protected void conditionsChanged() {
-		this.observers.forEach(ob -> ob.updateConditions());
+		this.observers.forEach(Flyable::updateConditions);
 		this.toRemove.forEach(ob -> {
 			this.observers.remove(ob);
-			System.out.println(
-				"Tower says: " + ob.toString() + " unregistered from weather tower."
-			);
 		});
 		this.toRemove.clear();
 	}

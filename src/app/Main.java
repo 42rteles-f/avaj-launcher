@@ -18,18 +18,13 @@ public class Main {
             return ;
         }
 
-        try (PrintStream fileOut = new PrintStream(new FileOutputStream(SIMULATION_OUTPUT))){
-			Scenario scenario = new Scenario(args[0]);
-
+        try (PrintStream fileOut = new PrintStream(new FileOutputStream(SIMULATION_OUTPUT))) {
             System.setOut(fileOut);
-
-			new AirportSimulator(scenario);
-
-			System.setOut(originalOut);
+			new AirportSimulator(new Scenario(args[0]));
         }
 		catch (Exception e) {
-            System.out.println("Error redirecting output.");
-            return;
+			System.setOut(originalOut);
+			System.out.println("Exception: " + e.getMessage());
         }
 
 		return ;

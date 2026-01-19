@@ -17,16 +17,14 @@ public class AirportSimulator {
     }
 
 	public void setScenario(Scenario scenario) {
-		if (scenario == null ||
-			(scenario.isValid() == false)
-		) {
+		if (scenario == null) {
 			return;
 		}
 		this.scenario = scenario;
 	}
 
 	public void run() {
-		if (this.scenario == null || !this.scenario.isValid()) {
+		if (this.scenario == null) {
 			System.out.println("Invalid scenario. Simulation cannot be started.");
 			return;
 		}
@@ -42,7 +40,7 @@ public class AirportSimulator {
 
 	private void createAircrafts() {
 		for (AircraftSpec spec : this.scenario.aircrafts()) {
-			Flyable aircraft = AircraftFactory.getInstance().newAircraft(
+			AircraftFactory.getInstance().newAircraft(
 				spec.type,
 				spec.name,
 				new Coordinates(
@@ -50,8 +48,7 @@ public class AirportSimulator {
 					spec.latitude,
 					spec.height
 				)
-			);
-			aircraft.registerTower(this.weatherTower);
+			).registerTower(this.weatherTower);
 		}
 	}
 }
