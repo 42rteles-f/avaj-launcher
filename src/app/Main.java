@@ -3,6 +3,7 @@ package app;
 import java.io.FileOutputStream;
 import java.io.PrintStream;
 
+import exceptions.SimulationException;
 import simulator.AirportSimulator;
 import simulator.Scenario;
 
@@ -22,6 +23,10 @@ public class Main {
             System.setOut(fileOut);
 			new AirportSimulator(new Scenario(args[0]));
         }
+		catch (SimulationException e) {
+			System.setOut(originalOut);
+			System.out.println("Simulation Exception: " + e.getMessage());
+		}
 		catch (Exception e) {
 			System.setOut(originalOut);
 			System.out.println("Exception: " + e.getMessage());
