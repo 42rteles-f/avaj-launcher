@@ -5,7 +5,7 @@ import simulator.Coordinates;
 public class WeatherProvider {
 	private static final WeatherProvider INSTANCE = new WeatherProvider();
 
-	private String[]		weather = { "SUN", "RAIN", "FOG", "SNOW" };
+	private final String[]	weather = { "SUN", "RAIN", "FOG", "SNOW" };
 
 	private WeatherProvider() {}
 
