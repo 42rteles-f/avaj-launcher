@@ -8,8 +8,8 @@ public class Coordinates {
 	private int latitude;
 	private int height;
 
-	Coordinates(int longitude, int latitude, int height) {
-		this.setAll(longitude, latitude, height);
+	Coordinates(int p_longitude, int p_latitude, int p_height) {
+		this.setAll(p_longitude, p_latitude, p_height);
 	}
 
 	public void setAll(int longitude, int latitude, int height) {

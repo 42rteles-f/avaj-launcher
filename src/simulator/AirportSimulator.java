@@ -4,12 +4,13 @@ import java.util.List;
 
 import aircraft.AircraftFactory;
 import aircraft.AircraftSpec;
+import exceptions.SimulationException;
 import tower.WeatherTower;
 
 public class AirportSimulator {
 	private WeatherTower	weatherTower;
 
-    public AirportSimulator(Scenario scenario) {
+    public AirportSimulator(Scenario scenario) throws SimulationException {
 		if (scenario == null) {
 			throw new IllegalArgumentException("Scenario cannot be null.");
 		}
@@ -18,7 +19,7 @@ public class AirportSimulator {
 		this.run(scenario.numberOfSimulations());
     }
 
-	private void createAircrafts(List<AircraftSpec> aircraftSpecs) {
+	private void createAircrafts(List<AircraftSpec> aircraftSpecs) throws SimulationException {
 		for (AircraftSpec spec : aircraftSpecs)
 		{
 			AircraftFactory.getInstance().newAircraft(

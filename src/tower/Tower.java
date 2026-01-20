@@ -29,7 +29,7 @@ public class Tower {
 		);
 	}
 
-	protected void conditionsChanged() {
+	protected void conditionChanged() {
 		(new ArrayList<>(this.observers)).forEach(Flyable::updateConditions);
 	}
 }
